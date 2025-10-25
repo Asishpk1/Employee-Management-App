@@ -86,6 +86,7 @@ const Home = () => {
             console.log(result);
             if(result.status == 200){
                 getAllEmployees()
+                toast.success(`${result.data.name} deleted Succesfully`)
             }
             
         }

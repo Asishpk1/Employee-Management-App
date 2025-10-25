@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { editEmployeeAPI } from '../Service/allAPI';
 import { data } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Edit = ({ employee,setEditResponse }) => {
     console.log(employee);
@@ -29,6 +30,7 @@ const Edit = ({ employee,setEditResponse }) => {
                 if(result.status == 200){
                     handleClose()
                     setEditResponse(result,data)
+                    toast.success(`${result.data.name} updated Succesfully`)
 
                 }
                 
