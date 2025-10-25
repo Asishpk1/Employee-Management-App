@@ -14,6 +14,8 @@ const Home = () => {
       const handleClose = () => setShow(false);
       const handleShow = () => setShow(true);
 
+      const [searchKey,setSearchKey] = useState([])
+
       const [editResponse,setEditResponse] = useState({})
       
       const [employeeDetails,setEmployeeDeatils] = useState({name:"",email:"",position:"",department:"",salary:""})
@@ -56,12 +58,12 @@ const Home = () => {
 
       useEffect(() => {
         getAllEmployees()
-      }, [editResponse])
+      }, [editResponse,searchKey])
       
 
       const getAllEmployees = async () =>{
         try{
-            const result = await getAllEmployeesAPI()
+            const result = await getAllEmployeesAPI(searchKey)
             console.log(result);
             if(result.status == 200){
                 setAllEmployees(result.data)
@@ -124,7 +126,7 @@ const Home = () => {
         </Modal.Footer>
       </Modal>
         </div>
-        <input className='form-control w-25' type="text" placeholder='Search'/>
+        <input onChange={(e)=>setSearchKey(e.target.value)} className='form-control w-25' type="text" placeholder='Search'/>
       </div>
 
       <div className='mt-5'>

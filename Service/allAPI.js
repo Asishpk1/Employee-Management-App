@@ -8,8 +8,8 @@ export const addEmployeeAPI = async(reqBody)=>{
 }
 
 //API call for Getting all Employees
-export const getAllEmployeesAPI = async()=>{
-   return await commonAPI("GET",`${SERVER_URL}/get/employees`,{})
+export const getAllEmployeesAPI = async(searchKey)=>{
+   return await commonAPI("GET",`${SERVER_URL}/get/employees?search=${searchKey}`,{})
 }
 
 //API call for Updating Employees

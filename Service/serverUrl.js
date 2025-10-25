@@ -1,3 +1,3 @@
-const SERVER_URL = "http://localhost:3000"
+const SERVER_URL = "https://employee-backend-mf1n.onrender.com"
 
 export default SERVER_URL
