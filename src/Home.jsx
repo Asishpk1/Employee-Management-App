@@ -127,7 +127,7 @@ const Home = () => {
         </Modal.Footer>
       </Modal>
         </div>
-        <input onChange={(e)=>setSearchKey(e.target.value)} className='form-control w-25' type="text" placeholder='Search'/>
+        <input onChange={(e)=>setSearchKey(e.target.value)} className='form-control w-25' type="text" placeholder='Search by name,position,department'/>
       </div>
 
       <div className='mt-5'>
